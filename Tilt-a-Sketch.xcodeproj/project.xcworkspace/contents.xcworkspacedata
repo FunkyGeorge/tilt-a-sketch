@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iosxProject1.xcodeproj">
+      location = "self:/Users/User/Documents/iOS/tilt-a-sketch/Tilt-a-Sketch.xcodeproj">
    </FileRef>
 </Workspace>
