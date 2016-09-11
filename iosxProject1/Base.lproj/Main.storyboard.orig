@@ -154,6 +154,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+<<<<<<< HEAD
                         <constraints>
                             <constraint firstItem="DXx-Kx-mhC" firstAttribute="top" secondItem="JT6-Sc-tWN" secondAttribute="bottom" id="3Zi-T7-JpT"/>
                             <constraint firstItem="bNT-Q9-j87" firstAttribute="top" secondItem="6fH-Wt-Rn8" secondAttribute="bottom" id="CBk-w9-qTG"/>
@@ -167,15 +168,21 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="drawView" destination="6fH-Wt-Rn8" id="Ftc-Wx-0V1"/>
+=======
+                    </view>
+                    <connections>
                         <outlet property="artist" destination="QsO-kq-1Mf" id="rDn-yF-1Pb"/>
                         <outlet property="canvas" destination="Fc9-bj-vit" id="4G3-fn-nWI"/>
-                    </connections>
-                    <connections>
-                        <outlet property="drawView" destination="6fH-Wt-Rn8" id="Ftc-Wx-0V1"/>
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
                     </connections>
                 </viewController>
             </objects>
+<<<<<<< HEAD
+            <point key="canvasLocation" x="891" y="420"/>
+=======
             <point key="canvasLocation" x="983" y="409"/>
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
         </scene>
     </scenes>
 </document>

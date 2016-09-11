@@ -11,8 +11,9 @@ import CoreMotion
 
 class SecondViewController: UIViewController {
 
+<<<<<<< HEAD
     @IBOutlet weak var drawView: DrawView!
-    
+=======
     let motion = CMMotionManager()
     
     @IBOutlet var canvas: UIView!
@@ -24,6 +25,7 @@ class SecondViewController: UIViewController {
     var artistXState = 0
     var artistY = 0.0
     var artistYState = 0
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +128,9 @@ class SecondViewController: UIViewController {
     }
     
 
-   
+<<<<<<< HEAD
+    /*
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -149,5 +153,8 @@ class SecondViewController: UIViewController {
         drawView.drawColor = color
     }
     
+=======
+   
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
 
 }
