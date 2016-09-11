@@ -202,7 +202,7 @@
 				TargetAttributes = {
 					B2E628CF1D83317100D8A617 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 324K7JL2HS;
+						DevelopmentTeam = 2483GEC66K;
 					};
 					B2E628E31D83317100D8A617 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -418,7 +418,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iosxProject1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.AndreaRitch.Tilt-a-Sketch";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Tilt-a-Sketch";
 				PRODUCT_NAME = "Tilt-a-Sketch";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,7 +433,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iosxProject1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.AndreaRitch.Tilt-a-Sketch";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Tilt-a-Sketch";
 				PRODUCT_NAME = "Tilt-a-Sketch";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
