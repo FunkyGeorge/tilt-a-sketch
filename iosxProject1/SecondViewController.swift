@@ -22,9 +22,7 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var artist: UILabel!
     var artistX = 0.0
-    var artistXState = 0
     var artistY = 0.0
-    var artistYState = 0
     
     
     override func viewDidLoad() {
@@ -72,18 +70,14 @@ class SecondViewController: UIViewController {
                 
                 if self.artistX < 0 {
                     self.artistX = 0
-                    self.artistXState = 0
                 } else if self.artistX > Double(self.canvas.frame.maxX){
                     self.artistX = Double(self.canvas.frame.maxX)
-                    self.artistXState = 0
                 }
                 
                 if self.artistY < 0 {
                     self.artistY = 0
-                    self.artistYState = 0
                 } else if self.artistY > Double(self.canvas.frame.maxY){
                     self.artistY = Double(self.canvas.frame.maxY)
-                    self.artistYState = 0
                 }
                 
                 self.artist.center = CGPoint(x: self.artistX, y: self.artistY)
