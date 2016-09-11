@@ -11,6 +11,9 @@ import CoreMotion
 
 class SecondViewController: UIViewController {
 
+//    @IBOutlet weak var drawView: DrawView!
+    @IBOutlet weak var drawView: DrawView!
+    
     let motion = CMMotionManager()
     
     @IBOutlet var canvas: UIView!
@@ -103,5 +106,42 @@ class SecondViewController: UIViewController {
     
 
    
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+
+    
+    //clear out all the lines!
+    @IBAction func clearPressed(sender: UIButton) {
+        drawView.lines = []
+        drawView.setNeedsDisplay()
+    }
+    
+    @IBAction func colorPressed(sender: UIButton) {
+        var color: UIColor!
+        switch sender.tag {
+            case 1:
+                color = UIColor.redColor()
+            case 2:
+                color = UIColor.orangeColor()
+            case 3:
+                color = UIColor.yellowColor()
+            case 4:
+                color = UIColor.greenColor()
+            case 5:
+                color = UIColor.cyanColor()
+            case 6:
+                color = UIColor.blueColor()
+            case 7:
+                color = UIColor.purpleColor()
+            default:
+                color = UIColor.greenColor()
+        }
+        drawView.drawColor = color
+    }
+    
 
 }
