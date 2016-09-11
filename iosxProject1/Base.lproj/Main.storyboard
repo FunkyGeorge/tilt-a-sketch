@@ -39,7 +39,6 @@
         <!--Second View Controller-->
         <scene sceneID="wl5-Nw-ihc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D8H-PP-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dGI-lW-WDi" customClass="SecondViewController" customModule="Tilt_a_Sketch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JT6-Sc-tWN"/>
@@ -65,6 +64,7 @@
                         <outlet property="canvas" destination="Fc9-bj-vit" id="4G3-fn-nWI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8H-PP-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="983" y="409"/>
         </scene>

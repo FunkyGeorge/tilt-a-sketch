@@ -23,72 +23,49 @@ class SecondViewController: UIViewController {
     var artistY = 0.0
     var artistYState = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(self.canvas.frame.maxX)
-        print(self.canvas.frame.maxY)
         
         artistX = Double(canvas.center.x)
         artistY = Double(canvas.center.y)
         
-        motion.startGyroUpdates()
-        motion.gyroUpdateInterval = 0.05
-        motion.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()){
+        motion.startAccelerometerUpdates()
+        motion.accelerometerUpdateInterval = 0.03
+        motion.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()){
             (data, error) in
-            if let tilt = self.motion.gyroData {
-                var xResult = "none"
-                var yResult = "none"
+            if let stable = self.motion.accelerometerData {
+                let strStable = String(stable)
+                let tilt = strStable.componentsSeparatedByString(" ")
                 
-                if self.artistXState == 1 {
-                    self.artistY -= 10.0
-                } else if self.artistXState == -1 {
-                    self.artistY += 10.0
+                
+                //Movement logic
+                let yTilt = Double(tilt[1])
+                let xTilt = Double(tilt[3])
+                
+                if xTilt > 0.08 {
+                    self.artistY -= 8.0
+                } else if xTilt > 0.03 {
+                    self.artistY -= 4.0
+                } else if xTilt < -0.08 {
+                    self.artistY += 8.0
+                } else if xTilt < -0.03 {
+                    self.artistY += 4.0
                 }
                 
-                if self.artistYState == 1 {
-                    self.artistX += 10.0
-                } else if self.artistYState == -1 {
-                    self.artistX -= 10.0
+                if yTilt > 0.08 {
+                    self.artistX += 8.0
+                } else if yTilt > 0.03 {
+                    self.artistX += 4.0
+                } else if yTilt < -0.08 {
+                    self.artistX -= 8.0
+                } else if yTilt < -0.03 {
+                    self.artistX -= 4.0
                 }
                 
-                let strTilt = String(tilt)
-                let tipData = strTilt.componentsSeparatedByString(" ")
-                let xTilt = tipData[1]
-                let yTilt = tipData[3]
                 
-                if (Float(xTilt) > 12.0){
-                    if self.artistXState == 1 {
-                        self.artistXState = 0
-                    } else {
-                        self.artistXState = -1
-                    }
-                    xResult = "up"
-                } else if (Float(xTilt) < -12.0){
-                    if self.artistXState == -1 {
-                        self.artistXState = 0
-                    } else {
-                        self.artistXState = 1
-                    }
-                    xResult = "down"
-                }
                 
-                if (Float(yTilt) > 12.0){
-                    if self.artistYState == -1 {
-                        self.artistYState = 0
-                    } else {
-                        self.artistYState = 1
-                    }
-                    yResult = "right"
-                } else if (Float(yTilt) < -12.0){
-                    if self.artistYState == 1 {
-                        self.artistYState = 0
-                    } else {
-                        self.artistYState = -1
-                    }
-                    yResult = "left"
-                }
-                
+                //End movement logic
                 
                 if self.artistX < 0 {
                     self.artistX = 0
@@ -106,15 +83,16 @@ class SecondViewController: UIViewController {
                     self.artistYState = 0
                 }
                 
-                
-                
-                
-                
                 self.artist.center = CGPoint(x: self.artistX, y: self.artistY)
-                print("x: " + xResult + "  y: " + yResult)
+            
+            
                 
             }
-                    }
+            
+            
+            
+        }
+        
         
     }
 
