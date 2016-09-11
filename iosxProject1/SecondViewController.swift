@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canBecomeFirstResponder() //for shaking
         
         print(self.canvas.frame.maxX)
         print(self.canvas.frame.maxY)
@@ -133,6 +134,21 @@ class SecondViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    //for shaking
+    override func canBecomeFirstResponder() -> Bool {
+        super.canBecomeFirstResponder()
+        return true
+    }
+    
+    //for shaking
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            //clear out all lines, redraw view
+            drawView.lines = []
+            drawView.setNeedsDisplay()
+        }
     }
 
     
