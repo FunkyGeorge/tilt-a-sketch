@@ -80,7 +80,6 @@ class SecondViewController: UIViewController {
                 //adjusted not to go outside top of drawView frame
                 if self.artistY < Double(self.drawView.frame.minY) {
                     self.artistY = Double(self.drawView.frame.minY)
-                    self.artistYState = 0
                 } else if self.artistY > Double(self.canvas.frame.maxY){
                     self.artistY = Double(self.canvas.frame.maxY)
                 }
