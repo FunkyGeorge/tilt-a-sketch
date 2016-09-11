@@ -19,17 +19,20 @@ class SecondViewController: UIViewController {
     @IBOutlet var canvas: UIView!
     
     
-    
     @IBOutlet weak var artist: UILabel!
     var artistX = 0.0
     var artistY = 0.0
+    var lastSpot: CGPoint! //last location of the artist
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canBecomeFirstResponder() //for shaking
         
         artistX = Double(canvas.center.x)
         artistY = Double(canvas.center.y)
+        lastSpot = CGPoint(x: artistX, y: artistY)
+
         
         motion.startAccelerometerUpdates()
         motion.accelerometerUpdateInterval = 0.03
@@ -74,15 +77,21 @@ class SecondViewController: UIViewController {
                     self.artistX = Double(self.canvas.frame.maxX)
                 }
                 
-                if self.artistY < 0 {
-                    self.artistY = 0
+                //adjusted not to go outside top of drawView frame
+                if self.artistY < Double(self.drawView.frame.minY) {
+                    self.artistY = Double(self.drawView.frame.minY)
+                    self.artistYState = 0
                 } else if self.artistY > Double(self.canvas.frame.maxY){
                     self.artistY = Double(self.canvas.frame.maxY)
                 }
                 
                 self.artist.center = CGPoint(x: self.artistX, y: self.artistY)
-            
-            
+                self.artist.hidden = false //initially hidden
+                
+                //add a line!
+                self.drawView.lines.append(Line(start: self.lastSpot, end: self.artist.center, color: self.drawView.drawColor))
+                self.lastSpot = self.artist.center
+                self.drawView.setNeedsDisplay()
                 
             }
             
@@ -105,6 +114,21 @@ class SecondViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    //for shaking
+    override func canBecomeFirstResponder() -> Bool {
+        super.canBecomeFirstResponder()
+        return true
+    }
+    
+    //for shaking
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            //clear out all lines, redraw view
+            drawView.lines = []
+            drawView.setNeedsDisplay()
+        }
     }
 
     
