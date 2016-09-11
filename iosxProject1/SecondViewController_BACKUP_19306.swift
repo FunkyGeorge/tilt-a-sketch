@@ -11,9 +11,9 @@ import CoreMotion
 
 class SecondViewController: UIViewController {
 
-//    @IBOutlet weak var drawView: DrawView!
+<<<<<<< HEAD
     @IBOutlet weak var drawView: DrawView!
-    
+=======
     let motion = CMMotionManager()
     
     @IBOutlet var canvas: UIView!
@@ -25,6 +25,7 @@ class SecondViewController: UIViewController {
     var artistXState = 0
     var artistY = 0.0
     var artistYState = 0
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,43 +128,33 @@ class SecondViewController: UIViewController {
     }
     
 
-   
+<<<<<<< HEAD
+    /*
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
+    */
     
     //clear out all the lines!
-    @IBAction func clearPressed(sender: UIButton) {
+    @IBAction func clearPressed(sender: AnyObject) {
         drawView.lines = []
         drawView.setNeedsDisplay()
     }
     
     @IBAction func colorPressed(sender: UIButton) {
         var color: UIColor!
-        switch sender.tag {
-            case 1:
-                color = UIColor.redColor()
-            case 2:
-                color = UIColor.orangeColor()
-            case 3:
-                color = UIColor.yellowColor()
-            case 4:
-                color = UIColor.greenColor()
-            case 5:
-                color = UIColor.cyanColor()
-            case 6:
-                color = UIColor.blueColor()
-            case 7:
-                color = UIColor.purpleColor()
-            default:
-                color = UIColor.greenColor()
+        if (sender.titleLabel!.text == "Red") {
+            color = UIColor.redColor()
         }
         drawView.drawColor = color
     }
     
+=======
+   
+>>>>>>> b91c3f07303d3773ae111330e5f2441c3c0e0b00
 
 }
