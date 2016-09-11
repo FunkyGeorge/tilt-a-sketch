@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var drawView: DrawView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("second view loaded and controller ready")
@@ -31,5 +33,20 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //clear out all the lines!
+    @IBAction func clearPressed(sender: AnyObject) {
+        drawView.lines = []
+        drawView.setNeedsDisplay()
+    }
+    
+    @IBAction func colorPressed(sender: UIButton) {
+        var color: UIColor!
+        if (sender.titleLabel!.text == "Red") {
+            color = UIColor.redColor()
+        }
+        drawView.drawColor = color
+    }
+    
 
 }

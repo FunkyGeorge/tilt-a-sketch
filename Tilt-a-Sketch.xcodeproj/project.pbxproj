@@ -15,6 +15,8 @@
 		B2E628E91D83317100D8A617 /* iosxProject1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E628E81D83317100D8A617 /* iosxProject1Tests.swift */; };
 		B2E628F41D83317100D8A617 /* iosxProject1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E628F31D83317100D8A617 /* iosxProject1UITests.swift */; };
 		CEE94AA71D8343C600870BF2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE94AA61D8343C600870BF2 /* SecondViewController.swift */; };
+		D1740CDB1D83544800677512 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1740CDA1D83544800677512 /* DrawView.swift */; };
+		D1740CDD1D835A6500677512 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1740CDC1D835A6500677512 /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B2E628F31D83317100D8A617 /* iosxProject1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosxProject1UITests.swift; sourceTree = "<group>"; };
 		B2E628F51D83317100D8A617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE94AA61D8343C600870BF2 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D1740CDA1D83544800677512 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		D1740CDC1D835A6500677512 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = ../Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				B2E628DA1D83317100D8A617 /* Assets.xcassets */,
 				B2E628DC1D83317100D8A617 /* LaunchScreen.storyboard */,
 				B2E628DF1D83317100D8A617 /* Info.plist */,
+				D1740CDA1D83544800677512 /* DrawView.swift */,
+				D1740CDC1D835A6500677512 /* Line.swift */,
 			);
 			path = iosxProject1;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			files = (
 				CEE94AA71D8343C600870BF2 /* SecondViewController.swift in Sources */,
 				B2E628D61D83317100D8A617 /* ViewController.swift in Sources */,
+				D1740CDB1D83544800677512 /* DrawView.swift in Sources */,
 				B2E628D41D83317100D8A617 /* AppDelegate.swift in Sources */,
+				D1740CDD1D835A6500677512 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
