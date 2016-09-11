@@ -19,22 +19,24 @@ class SecondViewController: UIViewController {
     @IBOutlet var canvas: UIView!
     
     
-    
     @IBOutlet weak var artist: UILabel!
     var artistX = 0.0
     var artistXState = 0
     var artistY = 0.0
     var artistYState = 0
+    var lastSpot: CGPoint! //last location of the artist
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canBecomeFirstResponder() //for shaking
         
-        print(self.canvas.frame.maxX)
-        print(self.canvas.frame.maxY)
+//        print(self.canvas.frame.maxX)
+//        print(self.canvas.frame.maxY)
         
         artistX = Double(canvas.center.x)
         artistY = Double(canvas.center.y)
+        lastSpot = CGPoint(x: artistX, y: artistY)
+
         
         motion.startGyroUpdates()
         motion.gyroUpdateInterval = 0.05
@@ -44,16 +46,17 @@ class SecondViewController: UIViewController {
                 var xResult = "none"
                 var yResult = "none"
                 
+                //AJR: changed these to +/- 2.0 to make drawing less jumpy
                 if self.artistXState == 1 {
-                    self.artistY -= 10.0
+                    self.artistY -= 2.0
                 } else if self.artistXState == -1 {
-                    self.artistY += 10.0
+                    self.artistY += 2.0
                 }
                 
                 if self.artistYState == 1 {
-                    self.artistX += 10.0
+                    self.artistX += 2.0
                 } else if self.artistYState == -1 {
-                    self.artistX -= 10.0
+                    self.artistX -= 2.0
                 }
                 
                 let strTilt = String(tilt)
@@ -102,8 +105,9 @@ class SecondViewController: UIViewController {
                     self.artistXState = 0
                 }
                 
-                if self.artistY < 0 {
-                    self.artistY = 0
+                //adjusted not to go outside top of drawView frame
+                if self.artistY < Double(self.drawView.frame.minY) {
+                    self.artistY = Double(self.drawView.frame.minY)
                     self.artistYState = 0
                 } else if self.artistY > Double(self.canvas.frame.maxY){
                     self.artistY = Double(self.canvas.frame.maxY)
@@ -116,6 +120,12 @@ class SecondViewController: UIViewController {
                 
                 self.artist.center = CGPoint(x: self.artistX, y: self.artistY)
                 print("x: " + xResult + "  y: " + yResult)
+                self.artist.hidden = false //initially hidden
+                
+                //add a line!
+                self.drawView.lines.append(Line(start: self.lastSpot, end: self.artist.center, color: self.drawView.drawColor))
+                self.lastSpot = self.artist.center
+                self.drawView.setNeedsDisplay()
                 
             }
                     }
