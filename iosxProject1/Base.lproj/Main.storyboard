@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -40,7 +41,6 @@
         <!--Second View Controller-->
         <scene sceneID="wl5-Nw-ihc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D8H-PP-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dGI-lW-WDi" customClass="SecondViewController" customModule="Tilt_a_Sketch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JT6-Sc-tWN"/>
@@ -52,7 +52,7 @@
                         <subviews>
                             <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsO-kq-1Mf">
                                 <rect key="frame" x="268" y="65" width="10" height="10"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,57 +65,89 @@
                                         <rect key="frame" x="0.0" y="0.0" width="470" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FLO-PS-wKm">
-                                                <rect key="frame" x="0.0" y="0.0" width="79" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="67" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-ic-66o">
-                                                        <rect key="frame" x="24" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="red"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-ic-66o">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="8uk-Jv-Dar"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-Q5-jY9">
-                                                <rect key="frame" x="79" y="0.0" width="78" height="40"/>
+                                                <rect key="frame" x="67" y="0.0" width="68" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-3B-N1d">
-                                                        <rect key="frame" x="24" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-3B-N1d">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="qBw-r4-Por"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Egw-40-zTj">
-                                                <rect key="frame" x="157" y="0.0" width="79" height="40"/>
+                                                <rect key="frame" x="135" y="0.0" width="67" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-TQ-muh">
-                                                        <rect key="frame" x="25" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-TQ-muh">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="ShL-tS-rHq"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-L2-h6J">
-                                                <rect key="frame" x="235" y="0.0" width="79" height="40"/>
+                                                <rect key="frame" x="202" y="0.0" width="67" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2Q-dg-CzI">
-                                                        <rect key="frame" x="24" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2Q-dg-CzI">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="zai-s6-Leq"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DJl-iz-CEe">
-                                                <rect key="frame" x="314" y="0.0" width="78" height="40"/>
+                                                <rect key="frame" x="269" y="0.0" width="67" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tz-1h-oBG">
-                                                        <rect key="frame" x="24" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tz-1h-oBG">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="pxi-Ik-6m7"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vOR-1z-mGO">
-                                                <rect key="frame" x="392" y="0.0" width="79" height="40"/>
+                                                <rect key="frame" x="336" y="0.0" width="68" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-bb-ohh">
-                                                        <rect key="frame" x="25" y="0.0" width="30" height="40"/>
-                                                        <color key="backgroundColor" red="0.24775588075849825" green="0.66283540575916233" blue="0.41132700983554715" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-bb-ohh">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="hu2-oi-Yxd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mNs-8m-4l2">
+                                                <rect key="frame" x="403" y="0.0" width="67" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUU-B4-Uwy">
+                                                        <rect key="frame" x="19" y="0.0" width="30" height="40"/>
+                                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="0Nk-tU-UFJ"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="jTt-ub-CxX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -158,22 +190,21 @@
                             <constraint firstItem="DXx-Kx-mhC" firstAttribute="top" secondItem="JT6-Sc-tWN" secondAttribute="bottom" id="3Zi-T7-JpT"/>
                             <constraint firstItem="bNT-Q9-j87" firstAttribute="top" secondItem="6fH-Wt-Rn8" secondAttribute="bottom" id="CBk-w9-qTG"/>
                             <constraint firstItem="6fH-Wt-Rn8" firstAttribute="leading" secondItem="Fc9-bj-vit" secondAttribute="leadingMargin" constant="-20" id="DbB-KW-NgR"/>
-                            <constraint firstItem="h3R-5g-z67" firstAttribute="centerY" secondItem="Fc9-bj-vit" secondAttribute="centerY" id="I4d-IK-Pf1"/>
+                            <constraint firstAttribute="centerY" secondItem="Fc9-bj-vit" secondAttribute="centerY" id="I4d-IK-Pf1"/>
                             <constraint firstItem="DXx-Kx-mhC" firstAttribute="leading" secondItem="6fH-Wt-Rn8" secondAttribute="leading" id="VNs-Vb-AkW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6fH-Wt-Rn8" secondAttribute="trailing" constant="-20" id="fWh-Fz-iCd"/>
                             <constraint firstItem="6fH-Wt-Rn8" firstAttribute="top" secondItem="JT6-Sc-tWN" secondAttribute="bottom" constant="51" id="j9u-BT-Plf"/>
                             <constraint firstItem="DXx-Kx-mhC" firstAttribute="centerX" secondItem="Fc9-bj-vit" secondAttribute="centerX" id="nFj-QS-V34"/>
-                            <constraint firstItem="h3R-5g-z67" firstAttribute="centerX" secondItem="Fc9-bj-vit" secondAttribute="centerX" id="wgA-eY-nHC"/>
+                            <constraint firstAttribute="centerX" secondItem="Fc9-bj-vit" secondAttribute="centerX" id="wgA-eY-nHC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="artist" destination="QsO-kq-1Mf" id="rDn-yF-1Pb"/>
                         <outlet property="canvas" destination="Fc9-bj-vit" id="4G3-fn-nWI"/>
-                    </connections>
-                    <connections>
-                        <outlet property="drawView" destination="6fH-Wt-Rn8" id="Ftc-Wx-0V1"/>
+                        <outlet property="drawView" destination="6fH-Wt-Rn8" id="0aa-Ce-Ciz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8H-PP-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="983" y="409"/>
         </scene>
