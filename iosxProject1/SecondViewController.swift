@@ -23,11 +23,13 @@ class SecondViewController: UIViewController {
     var artistX = 0.0
     var artistY = 0.0
     var lastSpot: CGPoint! //last location of the artist
+    var paused = false //if drawing is paused
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canBecomeFirstResponder() //for shaking
+        
         
         artistX = Double(canvas.center.x)
         artistY = Double(canvas.center.y)
@@ -35,7 +37,7 @@ class SecondViewController: UIViewController {
 
         
         motion.startAccelerometerUpdates()
-        motion.accelerometerUpdateInterval = 0.03
+        motion.accelerometerUpdateInterval = 0.1
         motion.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()){
             (data, error) in
             if let stable = self.motion.accelerometerData {
@@ -88,10 +90,14 @@ class SecondViewController: UIViewController {
                 self.artist.hidden = false //initially hidden
                 
                 //add a line!
-                self.drawView.lines.append(Line(start: self.lastSpot, end: self.artist.center, color: self.drawView.drawColor))
-                self.lastSpot = self.artist.center
-                self.drawView.setNeedsDisplay()
-                
+                if (!self.paused) {
+                    if self.lastSpot == nil {
+                        self.lastSpot = self.artist.center
+                    }
+                    self.drawView.lines.append(Line(start: self.lastSpot, end: self.artist.center, color: self.drawView.drawColor))
+                    self.lastSpot = self.artist.center
+                    self.drawView.setNeedsDisplay()
+                }
             }
             
             
@@ -129,6 +135,20 @@ class SecondViewController: UIViewController {
             drawView.setNeedsDisplay()
         }
     }
+
+
+    
+    @IBAction func handleTap(sender: UITapGestureRecognizer) {
+            if sender.state == .Ended {
+                // handling code
+                if (sender.numberOfTouches() == 2) {
+                    paused = !paused
+                    lastSpot = nil
+                }
+            }
+    }
+
+    
 
     
     //clear out all the lines!
