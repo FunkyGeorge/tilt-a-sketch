@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,10 +26,18 @@
                                     <segue destination="dGI-lW-WDi" kind="show" id="lGK-KU-eFQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tilt-a-Sketch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNT-OJ-4Pj">
+                                <rect key="frame" x="191" y="102" width="218" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="TNT-OJ-4Pj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6lD-pb-OKQ"/>
                             <constraint firstItem="GtT-AN-NtV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HNx-oa-rCt"/>
+                            <constraint firstItem="GtT-AN-NtV" firstAttribute="top" secondItem="TNT-OJ-4Pj" secondAttribute="bottom" constant="141" id="Q2u-0W-4Kw"/>
                             <constraint firstItem="GtT-AN-NtV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TeR-Bh-VoL"/>
                         </constraints>
                     </view>
@@ -60,25 +68,34 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="86" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-ic-66o">
-                                                        <rect key="frame" x="30" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="hTP-iM-76q"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="YjR-s3-Iwj"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="8uk-Jv-Dar"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-Q5-jY9">
                                                 <rect key="frame" x="86" y="0.0" width="85" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-3B-N1d">
-                                                        <rect key="frame" x="30" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="atc-e1-asZ"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="6We-1s-gZT"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="qBw-r4-Por"/>
@@ -90,10 +107,10 @@
                                                 <rect key="frame" x="171" y="0.0" width="86" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-TQ-muh">
-                                                        <rect key="frame" x="31" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="L3X-4v-Xbu"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="9Cm-6x-8cd"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="ShL-tS-rHq"/>
@@ -105,10 +122,10 @@
                                                 <rect key="frame" x="257" y="0.0" width="86" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2Q-dg-CzI">
-                                                        <rect key="frame" x="31" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="p72-PR-ioF"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="C0U-OZ-cDe"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="zai-s6-Leq"/>
@@ -120,10 +137,10 @@
                                                 <rect key="frame" x="343" y="0.0" width="86" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tz-1h-oBG">
-                                                        <rect key="frame" x="30" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="SDF-i2-UlK"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Iqg-U7-zNf"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="pxi-Ik-6m7"/>
@@ -135,10 +152,10 @@
                                                 <rect key="frame" x="429" y="0.0" width="85" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-bb-ohh">
-                                                        <rect key="frame" x="30" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="27" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="623-tG-0l7"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="LbL-2v-fuo"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="hu2-oi-Yxd"/>
@@ -150,10 +167,10 @@
                                                 <rect key="frame" x="514" y="0.0" width="86" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUU-B4-Uwy">
-                                                        <rect key="frame" x="31" y="0.0" width="25" height="40"/>
+                                                        <rect key="frame" x="28" y="0.0" width="30" height="40"/>
                                                         <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="R1P-8Y-q4r"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Dp0-s8-4Cl"/>
                                                         </constraints>
                                                         <connections>
                                                             <action selector="colorPressed:" destination="dGI-lW-WDi" eventType="touchUpInside" id="jTt-ub-CxX"/>
@@ -169,8 +186,8 @@
                                     <constraint firstAttribute="height" constant="40" id="9hO-tX-GsY"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-Wt-Rn8" customClass="DrawView" customModule="Tilt_a_Sketch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="71" width="600" height="529"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-Wt-Rn8" customClass="DrawView" customModule="Tilt_a_Sketch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="63" width="600" height="529"/>
                                 <subviews>
                                     <label hidden="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsO-kq-1Mf">
                                         <rect key="frame" x="180" y="79" width="18" height="18"/>
@@ -205,6 +222,13 @@
                         <outlet property="artist" destination="QsO-kq-1Mf" id="rDn-yF-1Pb"/>
                         <outlet property="canvas" destination="Fc9-bj-vit" id="4G3-fn-nWI"/>
                         <outlet property="drawView" destination="6fH-Wt-Rn8" id="0aa-Ce-Ciz"/>
+                        <outletCollection property="buttons" destination="uRc-ic-66o" collectionClass="NSMutableArray" id="eTm-Lm-Npk"/>
+                        <outletCollection property="buttons" destination="Qr5-3B-N1d" collectionClass="NSMutableArray" id="7XS-dg-yoP"/>
+                        <outletCollection property="buttons" destination="tqs-TQ-muh" collectionClass="NSMutableArray" id="KQv-VF-xo1"/>
+                        <outletCollection property="buttons" destination="K2Q-dg-CzI" collectionClass="NSMutableArray" id="hFz-Y3-QSA"/>
+                        <outletCollection property="buttons" destination="2Tz-1h-oBG" collectionClass="NSMutableArray" id="7Oi-pO-fiN"/>
+                        <outletCollection property="buttons" destination="AAC-bb-ohh" collectionClass="NSMutableArray" id="As9-Fa-inV"/>
+                        <outletCollection property="buttons" destination="bUU-B4-Uwy" collectionClass="NSMutableArray" id="BOx-wM-buq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8H-PP-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>

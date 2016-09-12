@@ -19,6 +19,11 @@ class SecondViewController: UIViewController {
     @IBOutlet var canvas: UIView!
     
     
+    @IBOutlet var buttons: [UIButton]!
+    
+    
+    
+    
     @IBOutlet weak var artist: UILabel!
     var artistX = 0.0
     var artistY = 0.0
@@ -29,6 +34,9 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canBecomeFirstResponder() //for shaking
+        
+        buttons[3].layer.borderWidth = 1.5
+        buttons[3].layer.borderColor = UIColor.blackColor().CGColor
         
         
         artistX = Double(canvas.center.x)
@@ -159,6 +167,10 @@ class SecondViewController: UIViewController {
     
     @IBAction func colorPressed(sender: UIButton) {
         var color: UIColor!
+        for button in buttons {
+            button.layer.borderWidth = 1.5
+            button.layer.borderColor = UIColor.whiteColor().CGColor
+        }
         switch sender.tag {
             case 1:
                 color = UIColor.redColor()
@@ -178,6 +190,8 @@ class SecondViewController: UIViewController {
                 color = UIColor.greenColor()
         }
         drawView.drawColor = color
+        sender.layer.borderWidth = 1.5
+        sender.layer.borderColor = UIColor.blackColor().CGColor
     }
     
 
