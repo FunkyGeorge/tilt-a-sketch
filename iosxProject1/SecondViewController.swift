@@ -48,40 +48,40 @@ class SecondViewController: UIViewController {
                 let xTilt = Double(tilt[3])
                 
                 if xTilt > 0.08 {
-                    self.artistY -= 8.0
-                } else if xTilt > 0.03 {
                     self.artistY -= 4.0
+                } else if xTilt > 0.03 {
+                    self.artistY -= 2.0
                 } else if xTilt < -0.08 {
-                    self.artistY += 8.0
-                } else if xTilt < -0.03 {
                     self.artistY += 4.0
+                } else if xTilt < -0.03 {
+                    self.artistY += 2.0
                 }
                 
                 if yTilt > 0.08 {
-                    self.artistX += 8.0
-                } else if yTilt > 0.03 {
                     self.artistX += 4.0
+                } else if yTilt > 0.03 {
+                    self.artistX += 2.0
                 } else if yTilt < -0.08 {
-                    self.artistX -= 8.0
-                } else if yTilt < -0.03 {
                     self.artistX -= 4.0
+                } else if yTilt < -0.03 {
+                    self.artistX -= 2.0
                 }
                 
                 
                 
                 //End movement logic
                 
-                if self.artistX < 0 {
-                    self.artistX = 0
+                if self.artistX < 5 {
+                    self.artistX = 5
                 } else if self.artistX > Double(self.canvas.frame.maxX){
                     self.artistX = Double(self.canvas.frame.maxX)
                 }
                 
-                //adjusted not to go outside top of drawView frame
-                if self.artistY < Double(self.drawView.frame.minY) {
-                    self.artistY = Double(self.drawView.frame.minY)
-                } else if self.artistY > Double(self.canvas.frame.maxY){
-                    self.artistY = Double(self.canvas.frame.maxY)
+                //for some reason had to hardcode the bottom edge
+                if self.artistY < 0 {
+                    self.artistY = 0
+                } else if self.artistY > Double(self.canvas.frame.maxY - 80) {
+                    self.artistY = Double(self.canvas.frame.maxY - 80)
                 }
                 
                 self.artist.center = CGPoint(x: self.artistX, y: self.artistY)
